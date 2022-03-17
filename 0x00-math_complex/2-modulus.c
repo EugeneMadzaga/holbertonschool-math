@@ -1,12 +1,14 @@
 #include "main.h"
 /**
- * modulus - Function that returns the modul of the complex num
+ * modulus - function that returns the modulus of a given complex number.
+ * @c: complex
  *
- * @c: Parameter
- *
- * Return: returns the modul of the complex num
+ * Return: the modulus
  */
 double modulus(complex c)
 {
-        return(sqrt(pow(c.re, 2) + pow(c.im, 2)));
+	double c_re = pow(c.re, 2.0);
+	double c_im = pow(c.im, 2.0);
+
+	return (sqrt(c_re + c_im));
 }

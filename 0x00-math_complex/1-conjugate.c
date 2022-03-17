@@ -1,46 +1,13 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * display_complex_number - function to show an imaginary number
+ * conjugate - function that returns the conjugate of a given complex number.
+ * @c: structur
  *
- * @c: Parameter
+ * Return: structura conjugate
  */
-void display_complex_number(complex c)
+complex conjugate(complex c)
 {
-	char x;
-
-	x = (c.im < 0) ? '-' : '+';
-
-	if (c.im == 0)
-	{
-		printf("%.9g\n", c.re);
-	}
-	/**else if (c.re == 0)
-	{
-		if (c.im == 1)
-		{
-			printf("i\n");
-			return;
-		}
-		else if (c.im == -1)
-		{
-			printf("-i\n");
-			return;
-		}
-		printf("%.9gi\n", c.im);
-	}*/
-	else
-	{
-		c.im = (c.im < 0) ? -(c.im) : c.im;
-		if (c.im == 1)
-		{
-			printf("%.9g %c i\n", c.re, x);
-			return;
-		}
-		else if (c.im == -1)
-		{
-			printf("%.9g %c -i\n", c.re, x);
-			return;
-		}
-		printf("%.9g %c %.9gi\n", c.re, x, c.im);
-	}
+	c.im = c.im * -1;
+	return (c);
 }

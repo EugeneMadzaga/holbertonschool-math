@@ -1,11 +1,9 @@
 #include "main.h"
 /**
- * multiplication - function that performs the multiplication
- * operation to complex numbers
- *
- * @c1: Parameter structure 1
- * @c2: Parameter structure 2
- * @c3: Parameter pointer to structure
+ * multiplication - multiplication operation to complex numbers
+ * @c1: 1 number
+ * @c2: 2 number
+ * @c3: result multiplication number
  */
 void multiplication(complex c1, complex c2, complex *c3)
 {

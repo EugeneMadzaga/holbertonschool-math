@@ -1,17 +1,14 @@
 #include "main.h"
 /**
- * argument - function that returns the argument of a given complex number
+ * argument - function that returns the argument of a given complex number.
+ * @c: complex
  *
- * @c: Parameter structure
- *
- * Return: returns the argument of a given complex number
+ * Return: the argument
  */
 double argument(complex c)
 {
-        double x, ret;
-
-        x = c.im / c.re;
-        ret = atan (x);
-
-        return (ret);
+	if (c.re != 0)
+		return (atan(c.im / c.re));
+	else
+		return (0);
 }

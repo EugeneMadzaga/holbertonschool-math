@@ -1,12 +1,9 @@
 #include "main.h"
 /**
- * division - function that performs the division operation to complex numbers
- *
- * @c1: Parameter structure 1
- * @c2: Parameter structure 2
- * @c3: Parameter pointer to structure
- *
- * Return: return the division
+ * division - division operation to complex numbers.
+ * @c1: 1 number
+ * @c2: 2 number
+ * @c3: result division number complez
  */
 void division(complex c1, complex c2, complex *c3)
 {

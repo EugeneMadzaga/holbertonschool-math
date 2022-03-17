@@ -1,17 +1,12 @@
 #include "main.h"
 /**
- * complex_from_mod_arg - function that update the real and the
- * imaginary parts of
- * a complex number given its modulus and arguments.
- *
- * @m: Parameter
- * @arg: Parameter
- * @c3: Parameter pointer to structure
- *
- * Return: return the multiplication
- */
+* complex_from_mod_arg - update the real and the imaginary parts.
+* @m: modulus
+* @arg: argument
+* @c3: result functionc complex_from_mod_arg
+*/
 void complex_from_mod_arg(double m, double arg, complex *c3)
 {
-	c3->re = m * cos(arg);
-	c3->im = m * sin(arg);
+	c3->re = (cos(arg) * m);
+	c3->im = (sin(arg) * m);
 }
