@@ -1,4 +1,5 @@
-#include "main.h"
+#include "holberton.h"
+#include <math.h>
 /**
  * substraction - function substraction operation to complex numbers
  * @c1: complex 1

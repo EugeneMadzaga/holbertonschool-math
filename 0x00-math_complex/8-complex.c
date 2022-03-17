@@ -1,4 +1,5 @@
-#include "main.h"
+#include "holberton.h"
+#include <math.h>
 /**
 * complex_from_mod_arg - update the real and the imaginary parts.
 * @m: modulus

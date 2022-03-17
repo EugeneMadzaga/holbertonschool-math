@@ -1,14 +1,16 @@
 #include "holberton.h"
+#include <math.h>
+
 /**
- * modulus - function that returns the modulus of a given complex number.
- * @c: complex
- *
- * Return: the modulus
- */
+* modulus - return the modulus
+* @c: structure complex
+* Return: c
+*/
+
 double modulus(complex c)
 {
-	double c_re = pow(c.re, 2.0);
-	double c_im = pow(c.im, 2.0);
+	double mod;
 
-	return (sqrt(c_re + c_im));
+	mod = sqrt(pow(c.re, 2) + pow(c.im, 2));
+	return (mod);
 }

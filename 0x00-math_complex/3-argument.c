@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <math.h>
 /**
  * argument - function that returns the argument of a given complex number.
  * @c: complex
