@@ -1,4 +1,5 @@
-#include "main.h"
+#include "holberton.h"
+#include <math.h>
 /**
  * multiplication - multiplication operation to complex numbers
  * @c1: 1 number
