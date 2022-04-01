@@ -1,37 +1,46 @@
 #include "heron.h"
 /**
- * heron - Creates The Heron Sequence
- * @p: number to calculate the root
- * @x0: first number of variable
+ * heron - funtion that return the Heron sequence until having convergence
+ * with an error less or equal to 10^(-7)
  *
- * Return: The Heron sequence until having convergence
- * with an error less or equal to 10^-7.
+ * @p: Parameter with the number to compare the root
+ * @x0: Parameter with the start point
+ *
+ * Return: The head of the created linked
  */
 t_cell *heron(double p, double x0)
 {
-	double fx = 0, _error = 0;
-	t_cell *head = NULL, *new = NULL, *tail;
+	double x1, error = 0;
+	t_cell *new, *head = NULL, *tmp = NULL;
+
+	x1 = x0;
 
 	new = malloc(sizeof(t_cell));
-	if (!new)
+	if (new == NULL)
 		return (NULL);
-
-	fx = x0;
-
 	head = new;
-	new->elt = fx;
+	new->elt = x1;
 	new->next = NULL;
-	_error = ((fx * fx) - p);
-	_error = (_error >= 0) ? _error : -(_error);
-	if (_error <= 0.0000001)
-		return (head);
 
-	fx = (0.5) * (x0 + (p / x0));
-	head = heron(p, fx);
-	tail = head;
-	while (tail->next)
-		tail = tail->next;
-	tail->next = new;
+	error = ((x1 * x1) > p) ? (x1 * x1) - p : p - (x1 * x1);
+
+	if (error <= 0.0000001)
+	{
+		return (head);
+	}
+
+	x1 = ((p / x0) + x0) / 2;
+
+	head = heron(p, x1);
+
+	tmp = head;
+
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+	}
+
+	tmp->next = new;
 
 	return (head);
 }

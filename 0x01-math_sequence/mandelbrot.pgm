@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <curses.h>
+#include <conio.h>
+#include <graphics.h>
 /**
  * main - Function that prints Mandelbrot’s Sets
  *
@@ -7,17 +8,19 @@
  */
 int main(void)
 {
-	int A, B, i;
+	int A, B, i, gd, gm;
 	double a, b, x, y, t, n = 20;
 
-	printf("Mandelbrot Set\n");
+	detectgraph(&gd, &gm);
+	initgraph(&gd, &gm, NULL);
+	/*printf("Mandelbrot Set\n");*/
 
 	for (B = 0; B <= 4 * n; B++)
 	{
-		b = 2 - (B / n);
+		b = 2 - (B / n)
 		for (A = 0; A <= 4 * n; A++)
 		{
-			a = -2 + (A / n);
+			a = -2 + (A / n)
 			x = 0;
 			y = 0;
 
@@ -31,12 +34,16 @@ int main(void)
 			}
 
 			if (i == 1001)
-				printf(".");
-			else
-				printf(" ");
+				/** printf("."); **/
+				putpixel(A, B, 1);
+			/**
+			 * else
+			 *	printf(" ");
+			 */
 		}
-		printf("\n");
+		/** printf("\n"); **/
 	}
 	getch();
+	closegraph();
 	return (0);
 }

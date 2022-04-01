@@ -1,42 +1,73 @@
+/*
+* 1-fibonacci.c - prints fibonacci secuence
+* Author: Elizabeth Mashilo
+* Date: March 29, 2022
+*/
+
 #include "fibonacci.h"
-#include <stdio.h>
+
 /**
- * Fibonnaci - Defines The Fibonacci sequence
- *
- * Return: The pointer to struct t_cell
- */
+* Fibonnaci - fibonacci
+* Return: void
+*/
+
 t_cell *Fibonnaci()
 {
-	int f1 = 1, f2 = 1, f3 = 1;
-	t_cell *node, *head = NULL;
+double goldn = 1.618034;
+double togold = 2;
+int mflag = 1;
+double diff = 0.00000005, oper;
+t_cell *prevnode, *preprevnode, *tempnode, *fibon;
 
-	while (f1 != 6765)
+fibon = malloc(sizeof(t_cell));
+	if (fibon == NULL)
+		free(fibon);
+fibon->elt = 1;
+fibon->next = NULL;
+preprevnode = fibon;
+prevnode = fibon;
+tempnode = malloc(sizeof(t_cell));
+	if (tempnode == NULL)
+		free(tempnode);
+tempnode->elt = 1;
+tempnode->next = preprevnode;
+preprevnode = tempnode;
+	while (mflag)
 	{
-		node = malloc(sizeof(t_cell));
-		if (node == NULL)
-			return (NULL);
-		f1 = f2;
-		f2 = f3;
-		f3 = f1 + f2;
-		node->elt = f1;
-		node->next = head;
-		head = node;
+		tempnode = malloc(sizeof(t_cell));
+			if (tempnode == NULL)
+				free(tempnode);
+		tempnode->elt = preprevnode->elt + prevnode->elt;
+		tempnode->next = preprevnode;
+		prevnode = preprevnode;
+		preprevnode = tempnode;
+		togold = (double) preprevnode->elt / prevnode->elt;
+			if (togold > goldn)
+				oper = togold - goldn;
+			else
+				oper = goldn - togold;
+
+			if (oper <= diff)
+				mflag = 0;
 	}
-	return (head);
+return (preprevnode);
 }
 
 /**
- * gold_number - Creates the Golden Ratio
- * @head: The pointer to struct t_cell
- *
- * Return: The value of the Golden Ratio
- */
+* gold_number - calculate gold number from fibonacci numbers
+* @head: list
+* Return: void
+*/
 double gold_number(t_cell *head)
 {
-	double numerator = head->elt;
-	double denominator = head->next->elt;
-	double result = 0;
-
-	result = numerator / denominator;
-	return (result);
+double thediv;
+t_cell *a;
+t_cell *b;
+/* receive a SLL divide the last number with the previous */
+a = head;
+head = head->next;
+b = head;
+thediv = (double) a->elt / b->elt;
+/* Thats it */
+return (thediv);
 }
