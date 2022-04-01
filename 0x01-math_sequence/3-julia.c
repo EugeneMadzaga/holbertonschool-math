@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <curses.h>
 #include <stdlib.h>
+
 /**
- * main - Function that prints Julia's Set
+ * main - Function that prints Julias Set
  *
  * Return: End Program
  */
@@ -41,15 +42,13 @@ int main(void)
 					s = s + 1;
 				}
 				else
-					printf(" ");
+					printf("");
 			}
 			printf("\n");
 		}
 		if (s > 10)
 		{
-			/**while (!GetAsyncKeyState(VK_RETURN))
-			{}*/
-			return(0);
+			return (0);
 		}
 		system("CLS");
 	}
