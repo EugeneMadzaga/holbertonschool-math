@@ -1,8 +1,6 @@
-
 #ifndef EULER_H
 #define EULER_H
 
-void Euler(FILE *euler, char *name, double x0, doubley0, double T, int n);
+double euler_method(double a, double b, int steps);
 
 #ENDIF /* EULER_H */
-

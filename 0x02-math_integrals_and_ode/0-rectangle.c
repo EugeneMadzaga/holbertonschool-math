@@ -28,9 +28,9 @@ w = a;
 	for (i = 1; i <= steps; i++)
 	{
 		/* in terms of width */
-		height = 1 / (1 + (w * w));
+		height = 1 / (1 + (w *w));
 		/* of all areas */
-		sum += width * height;
+		sum += width *height;
 		/* change in width */
 		w += width;
 	}

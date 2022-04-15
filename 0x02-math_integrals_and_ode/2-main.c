@@ -11,6 +11,6 @@ b = 1.4;
 steps = 7;
 
 solution = euler_method(a, b, steps);
-printf("solution:%lf \n",solution);
+printf("solution:%lf \n", solution);
 return (0);
 }

@@ -1,7 +1,7 @@
 /*
 * 0 - ODE method
 * Author: Eugene Madzaga
-* Date: 10 April 2022
+* Date: 15 April 2022
 */
 
 #include <stdio.h>
@@ -51,5 +51,5 @@ gamma +=  -sin(beta);
 }
 
 /* Lets see */
-return(gamma);
+return (gamma);
 }
